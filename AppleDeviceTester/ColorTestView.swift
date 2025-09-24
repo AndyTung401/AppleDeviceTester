@@ -7,17 +7,6 @@
 
 import SwiftUI
 
-extension UINavigationController: UIGestureRecognizerDelegate {
-    override open func viewDidLoad() {
-        super.viewDidLoad()
-        interactivePopGestureRecognizer?.delegate = self
-    }
-
-    public func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
-        return viewControllers.count > 1
-    }
-}
-
 enum P3Color {
     case red
     case green
@@ -76,9 +65,11 @@ struct ColorTestView: View {
                     hideStatusBar = false
                 }
             }
-            .alert("Tap anywhere to change color.\nSwipe right on the left edge to exit.", isPresented: $initialAlert) {
-                Button("OK", role: .cancel) { }
-            }
+            .alert("Note:", isPresented: $initialAlert, actions: {
+                Button("OK", role: .confirm) { }
+            }, message: {
+                Text("Tap anywhere to change color.\nSwipe right on the left edge to exit.")
+            })
     }
 }
 

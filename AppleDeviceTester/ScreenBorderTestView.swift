@@ -38,7 +38,7 @@ struct ScreenBorderTestView: View {
                 
                 VStack {
                     Spacer()
-                    Label("Swipe right on the left edge to go back.", systemImage: "hand.draw")
+                    Label("Swipe right on the left edge to exit.", systemImage: "hand.draw")
                         .font(.footnote)
                         .foregroundStyle(.gray)
                         .padding()
