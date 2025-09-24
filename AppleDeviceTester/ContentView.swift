@@ -34,6 +34,7 @@ struct ContentView: View {
                         Image(systemName: symbol)
                             .font(.largeTitle)
                             .foregroundStyle(.blue)
+                            .frame(height: 40)
                         Text(title)
                             .font(.subheadline)
                     }
@@ -51,7 +52,7 @@ struct ContentView: View {
                     
                     navLink("Screen Border", "rectangle.expand.diagonal", ScreenBorderTestView(hideStatusBar: $hideStatusBar))
                     
-                    navLink("Screen Border", "rectangle.expand.diagonal", ScreenBorderTestView(hideStatusBar: $hideStatusBar))
+                    navLink("Touch Screen", "hand.tap", TouchScreenTestView(hideStatusBar: $hideStatusBar))
                 }
                 GridRow {
                 }
