@@ -47,6 +47,15 @@ struct ContentView: View {
     var body: some View {
         NavigationStack {
             Grid(horizontalSpacing: 20, verticalSpacing: 20) {
+                HStack {
+                    Text("Screen")
+                        .fontWeight(.semibold)
+                        .foregroundStyle(.gray)
+
+                    Spacer()
+                        .border(.red)
+                }
+                .padding(.horizontal)
                 GridRow {
                     navLink("Display Color", "iphone.pattern.diagonalline", ColorTestView(hideStatusBar: $hideStatusBar))
                     
@@ -54,8 +63,24 @@ struct ContentView: View {
                     
                     navLink("Touch Screen", "hand.tap", TouchScreenTestView(hideStatusBar: $hideStatusBar))
                 }
-                GridRow {
+                HStack {
+                    Text("Sounds & Haptics")
+                        .fontWeight(.semibold)
+                        .foregroundStyle(.gray)
+
+                    Spacer()
+                        .border(.red)
                 }
+                .padding(.horizontal)
+                GridRow {
+                    navLink("Haptics", "iphone.radiowaves.left.and.right", HapticTestView())
+                    
+                    navLink("Speaker", "speaker.wave.3", SpeakerTestView())
+                    
+                    navLink("Microphone", "waveform", MicrophoneTestView())
+                }
+                
+                Spacer()
             }
             .padding(20)
             

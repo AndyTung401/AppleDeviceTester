@@ -31,7 +31,7 @@ enum P3Color {
 }
 
 struct ColorTestView: View {
-    @State var color: P3Color = .white
+    @State var color: P3Color = .black
     @Binding var hideStatusBar: Bool
     @State private var initialAlert: Bool = false
     var body: some View {
@@ -39,16 +39,16 @@ struct ColorTestView: View {
                 Color(color.toColor())
                     .onTapGesture {
                         switch color {
+                        case .black:
+                            color = .white
+                        case .white:
+                            color = .red
                         case .red:
                             color = .green
                         case .green:
                             color = .blue
                         case .blue:
-                            color = .white
-                        case .white:
                             color = .black
-                        case .black:
-                            color = .red
                         }
                     }
             }

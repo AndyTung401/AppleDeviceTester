@@ -10,7 +10,7 @@ import SwiftUI
 
 struct ScreenBorderTestView: View {
     @Binding var hideStatusBar: Bool
-    @State private var borderWidth = 3.0
+    @State private var borderWidth = 2.0
     
     var body: some View {
         ZStack {
