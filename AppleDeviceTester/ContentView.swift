@@ -77,7 +77,7 @@ struct ContentView: View {
                     
                     navLink("Speaker", "speaker.wave.3", SpeakerTestView())
                     
-                    navLink("Microphone", "waveform", MicrophoneTestView())
+                    navLink("Microphone", "waveform", MicrophoneTestView2())
                 }
                 
                 Spacer()

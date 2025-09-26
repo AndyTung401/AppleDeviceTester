@@ -5,6 +5,8 @@
 //  Created by 董承威 on 2025/9/26.
 //
 
+
+#if false
 import SwiftUI
 import AVFoundation
 import Accelerate
@@ -240,3 +242,4 @@ struct SpectrumView: View {
 #Preview {
     MicrophoneTestView()
 }
+#endif
