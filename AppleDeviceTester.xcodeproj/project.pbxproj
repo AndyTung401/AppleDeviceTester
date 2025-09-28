@@ -257,6 +257,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "To test LIDAR and Camera.";
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "To test biometrics authentication.";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "To show audio spectrum.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -296,6 +297,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "To test LIDAR and Camera.";
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "To test biometrics authentication.";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "To show audio spectrum.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

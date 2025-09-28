@@ -49,11 +49,14 @@ struct SpeakerTestView: View {
                 Button {
                     audioManager.togglePlay()
                 } label: {
-                    Image(systemName: audioManager.isPlaying ? "pause.circle.fill" : "play.circle.fill")
-                        .resizable()
-                        .frame(width: 80, height: 80)
-                        .foregroundStyle(audioManager.isPlaying ? .red : .green)
+                    Image(systemName: audioManager.isPlaying ? "pause.fill" : "play.fill")
+                        .font(.system(size: 50))
+                        .foregroundStyle(.background)
+                        .padding()
+                        .glassEffect(.clear.tint(audioManager.isPlaying ? .red : .green), in: .circle)
+                        .contentTransition(.symbolEffect(.replace.magic(fallback: .downUp.wholeSymbol), options: .nonRepeating))
                 }
+                .buttonStyle(.plain)
                 
                 Text("Swipe right on the left edge to exit.")
                     .font(.footnote)

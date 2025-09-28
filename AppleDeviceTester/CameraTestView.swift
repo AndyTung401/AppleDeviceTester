@@ -178,14 +178,21 @@ struct CameraTestView: View {
         VStack {
             CameraPreview(cameraType: $cameraType)
                 .aspectRatio(3/4, contentMode: .fit)
-            Spacer()
-            Picker("Lens", selection: $cameraType) {
-                ForEach(availableTypes, id: \.self) { type in
-                    Image(systemName: label(for: type)).tag(type)
+            VStack {
+                Picker("Lens", selection: $cameraType) {
+                    ForEach(availableTypes, id: \.self) { type in
+                        Image(systemName: label(for: type)).tag(type)
+                    }
                 }
+                .pickerStyle(.segmented)
+                .padding()
+                
+                Text(description(for: cameraType))
+                    .fontDesign(.monospaced)
+                    .font(.callout)
+                    .foregroundStyle(.gray)
+                    .animation(.easeInOut(duration: 0.3), value: cameraType)
             }
-            .pickerStyle(.segmented)
-            .padding()
             Spacer()
         }
         .onAppear {
@@ -205,6 +212,16 @@ struct CameraTestView: View {
             case .ultraWide: return "mountain.2.circle.fill"
             case .wide: return "tree.circle.fill"
             case .telephoto: return "scope"
+            }
+        }
+    
+    func description(for type: CameraType) -> String {
+            switch type {
+            case .frontUlraWide: return "Ultra Wide (Front)"
+            case .frontWide: return "Wide (Front)"
+            case .ultraWide: return "Ultra Wide (Back)"
+            case .wide: return "Wide (Back)"
+            case .telephoto: return "Telephoto (Back)"
             }
         }
 }

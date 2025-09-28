@@ -61,7 +61,7 @@ struct ContentView: View {
                     
                     navLink("Screen Border", "rectangle.expand.diagonal", ScreenBorderTestView(hideStatusBar: $hideStatusBar))
                     
-                    navLink("Touch Screen", "hand.tap", TouchScreenTestView(hideStatusBar: $hideStatusBar))
+                    navLink("Touch Screen", "hand.tap.fill", TouchScreenTestView(hideStatusBar: $hideStatusBar))
                 }
                 
                 HStack {
@@ -76,7 +76,7 @@ struct ContentView: View {
                 GridRow {
                     navLink("Haptics", "iphone.radiowaves.left.and.right", HapticTestView())
                     
-                    navLink("Speaker", "speaker.wave.3", SpeakerTestView())
+                    navLink("Speaker", "speaker.wave.3.fill", SpeakerTestView())
                     
                     navLink("Microphone", "waveform", MicrophoneTestView())
                 }
@@ -95,7 +95,24 @@ struct ContentView: View {
                     
                     navLink("Camera", "camera.fill", CameraTestView())
                     
-                    navLink("Microphone", "waveform", MicrophoneTestView())
+                    navLink("Flishlight", "flashlight.off.fill", FlashlightTestView())
+                }
+                
+                HStack {
+                    Text("Others")
+                        .fontWeight(.semibold)
+                        .foregroundStyle(.gray)
+
+                    Spacer()
+                        .border(.red)
+                }
+                .padding(.horizontal)
+                GridRow {
+                    navLink("Biometrics", "faceid", BiometricsTestView())
+                    
+                    navLink("Camera", "camera.fill", CameraTestView())
+                    
+                    navLink("Flishlight", "flashlight.off.fill", FlashlightTestView())
                 }
                 
                 Spacer()

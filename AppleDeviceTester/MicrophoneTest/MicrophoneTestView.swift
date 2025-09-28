@@ -20,11 +20,14 @@ struct MicrophoneTestView: View {
             Button {
                 toggle()
             } label: {
-                Image(systemName: running ? "pause.circle.fill" : "play.circle.fill")
-                                        .resizable()
-                                        .frame(width: 80, height: 80)
-                                        .foregroundStyle(running ? .red : .green)
+                Image(systemName: running ? "pause.fill" : "play.fill")
+                    .font(.system(size: 50))
+                    .foregroundStyle(.background)
+                    .padding()
+                    .glassEffect(.clear.tint(running ? .red : .green), in: .circle)
+                    .contentTransition(.symbolEffect(.replace.magic(fallback: .downUp.wholeSymbol), options: .nonRepeating))
             }
+            .buttonStyle(.plain)
             Spacer()
 
         }
