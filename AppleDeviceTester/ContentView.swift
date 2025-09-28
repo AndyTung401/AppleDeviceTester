@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-extension UINavigationController: UIGestureRecognizerDelegate {
+extension UINavigationController: @retroactive UIGestureRecognizerDelegate {
     override open func viewDidLoad() {
         super.viewDidLoad()
         interactivePopGestureRecognizer?.delegate = self
@@ -63,6 +63,7 @@ struct ContentView: View {
                     
                     navLink("Touch Screen", "hand.tap", TouchScreenTestView(hideStatusBar: $hideStatusBar))
                 }
+                
                 HStack {
                     Text("Sounds & Haptics")
                         .fontWeight(.semibold)
@@ -77,7 +78,24 @@ struct ContentView: View {
                     
                     navLink("Speaker", "speaker.wave.3", SpeakerTestView())
                     
-                    navLink("Microphone", "waveform", MicrophoneTestView2())
+                    navLink("Microphone", "waveform", MicrophoneTestView())
+                }
+                
+                HStack {
+                    Text("Camera")
+                        .fontWeight(.semibold)
+                        .foregroundStyle(.gray)
+
+                    Spacer()
+                        .border(.red)
+                }
+                .padding(.horizontal)
+                GridRow {
+                    navLink("Lidar", "wave.3.right", LidarTestView())
+                    
+                    navLink("Camera", "camera.fill", CameraTestView())
+                    
+                    navLink("Microphone", "waveform", MicrophoneTestView())
                 }
                 
                 Spacer()

@@ -7,15 +7,15 @@
 
 import SwiftUI
 
-struct MicrophoneTestView2: View {
+struct MicrophoneTestView: View {
     @StateObject private var audio = AudioEngine(fftSize: 4096)
     @State private var running = false
     
     var body: some View {
         VStack {
             SpectrumView(freqs: audio.freqs, dbs: audio.spectrum)
-                .padding()
                 .containerRelativeFrame(.vertical, count: 3, span: 2, spacing: 0)
+                .padding()
             Spacer()
             Button {
                 toggle()

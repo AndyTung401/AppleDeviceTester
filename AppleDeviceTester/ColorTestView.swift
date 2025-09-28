@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-enum P3Color {
+private enum P3Color {
     case red
     case green
     case blue
@@ -31,7 +31,7 @@ enum P3Color {
 }
 
 struct ColorTestView: View {
-    @State var color: P3Color = .black
+    @State private var color: P3Color = .black
     @Binding var hideStatusBar: Bool
     @State private var initialAlert: Bool = false
     var body: some View {

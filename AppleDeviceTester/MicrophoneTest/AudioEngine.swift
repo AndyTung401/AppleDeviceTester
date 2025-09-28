@@ -47,7 +47,7 @@ final class AudioEngine: ObservableObject {
         let session = AVAudioSession.sharedInstance()
         try session.setCategory(.playAndRecord, mode: .measurement, options: [.defaultToSpeaker, .mixWithOthers])
         try session.setActive(true, options: [])
-        session.requestRecordPermission { granted in
+        AVAudioApplication.requestRecordPermission { granted in
             // 這裡你可以檢查 granted
         }
 

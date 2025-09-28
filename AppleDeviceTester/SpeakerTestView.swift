@@ -41,14 +41,14 @@ struct SpeakerTestView: View {
                 Slider(value: $log2Frequency,
                        in: log2(20)...log2(20000),
                        step: 0.01)
-                .onChange(of: log2Frequency) { newValue in
+                .onChange(of: log2Frequency) { _, newValue in
                     audioManager.frequency = pow(2, newValue)
                 }
                 .padding()
                 
-                Button(action: {
+                Button {
                     audioManager.togglePlay()
-                }) {
+                } label: {
                     Image(systemName: audioManager.isPlaying ? "pause.circle.fill" : "play.circle.fill")
                         .resizable()
                         .frame(width: 80, height: 80)

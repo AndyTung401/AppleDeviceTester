@@ -77,6 +77,9 @@ struct SpectrumView: View {
                 
             }
         }
+        .background {
+            ContentUnavailableView("Session paused.", systemImage: "pause.fill")
+        }
         .cornerRadius(8)
         .glassEffect(in: .rect(cornerRadius: 8))
     }
